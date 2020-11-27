@@ -1,0 +1,23 @@
+.content {
+    width: 98%;
+    height: 80%;
+    margin: 0 auto;
+}
+.add {
+    cursor: pointer;
+    float: left;
+    margin: 0.8rem 0 0.8rem 2rem;
+    font-size: 1.2rem;
+    &:hover{
+        color: #409EFF;
+    }
+}
+.hint {
+    margin-left: 0.5rem;
+}
+.el-input {
+    width: 80%;
+}
+.input {
+    width: 80%;
+}
