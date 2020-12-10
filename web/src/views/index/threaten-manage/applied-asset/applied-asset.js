@@ -9,6 +9,7 @@ export default {
             newName: "",
             newDes: "",
             newLevel: 1,
+            newFragle: 1,
             newDepart: "",
             assetInfo:[],
             rjgl:[],
@@ -59,6 +60,7 @@ export default {
             this.newDepart = row.depart;
             this.newDes = row.threatenDescription;
             this.newLevel = row.level;
+            this.newFragle = row.fragileLevel;
         },
         check(row){
             this.id = row._id;
@@ -88,6 +90,7 @@ export default {
                 threatenDescription: this.newDes,
                 depart: this.newDepart,
                 level: this.newLevel,
+                fragileLevel: this.newFragle,
                 objectId: localStorage.objectId
             }
             !this.id ? await this.$http.post("/applied", newObj) : await this.$http.post(`/applied/${this.id}`, newObj); 
@@ -98,6 +101,8 @@ export default {
             });
             this.id = 0;
             this.assetId = 0;
+            this.newFragle = 1;
+            this.newLevel = 1;
             this.newName = "";
             this.newDes = "";
             this.getData();

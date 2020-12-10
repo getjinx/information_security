@@ -11,6 +11,7 @@ export default {
             newDepart: "",
             newDutyMan: "",
             newImportantLevel: 1,
+            newFragle: 1,
             assetInfo:[],
             yjgl:[],
         }
@@ -61,6 +62,7 @@ export default {
             this.newDepart = row.depart;
             this.newDes = row.threatenDescription;
             this.newImportantLevel = row.level;
+            this.newFragle = row.fragileLevel;
             // this.newWholenessLevel = row.wholenessLelel;
             // this.newUsabilityLevel = row.usabilityLevel;
             // this.newSecurityLevel = row.securityLevel;
@@ -94,6 +96,7 @@ export default {
                 threatenDescription: this.newDes,
                 level: this.newImportantLevel,
                 depart: this.newDepart,
+                fragileLevel: this.newFragle,
                 objectId: localStorage.objectId
             }
             !this.id ? await this.$http.post("/hardware", newObj) : await this.$http.post(`/hardware/${this.id}`, newObj); 
@@ -110,6 +113,7 @@ export default {
             this.assetId = 0;
             this.newDutyMan = "";
             this.newLevel = 1;
+            this.newFragle = 1;
             this.newHint = "";
             this.getData();
         }

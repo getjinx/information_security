@@ -10,6 +10,8 @@ export default {
             newHint: "",
             newDepart: "",
             newLevel: 1,
+            newSecret: 1,
+            newUseful: 1,
             newDutyMan: "",
             newNum: "",
             departs: [{
@@ -45,6 +47,8 @@ export default {
             this.newDes = row.rangeDescription;
             this.newLevel = row.level;
             this.newHint = row.remark;
+            this.newUseful = row.usefulLevel;
+            this.newSecret = row.secretLevel;
         },
         check(row) {
             this.id = row._id;
@@ -77,6 +81,8 @@ export default {
                 level: this.newLevel,
                 remark: this.newHint,
                 depart: this.newDepart,
+                secretLevel: this.newSecret,
+                usefulLevel: this.newUseful,
                 objectId: localStorage.objectId
             };
             !this.id ? await this.$http.post("/hardware", newObj) : await this.$http.post(`/hardware/${this.id}`, newObj); 
@@ -92,6 +98,8 @@ export default {
             this.newNum = "";
             this.newDutyMan = "";
             this.newLevel = 1;
+            this.newUseful = 1;
+            this.newSecret = 1;
             this.newHint = "";
             this.getData();
         }

@@ -9,6 +9,8 @@ export default {
             newDes: "",
             newHint: "",
             newDepart: "",
+            newSecret: 1,
+            newUseful: 1,
             newLevel: 1,
             departs: [{
                 label:"信息中心",
@@ -41,6 +43,8 @@ export default {
             this.newDes = row.rangeDescription;
             this.newLevel = row.level;
             this.newHint = row.remark;
+            this.newUseful = row.usefulLevel;
+            this.newSecret = row.secretLevel;
         },
         check(row) {
             this.id = row._id;
@@ -72,6 +76,8 @@ export default {
                 level: this.newLevel,
                 remark: this.newHint,
                 depart: this.newDepart,
+                secretLevel: this.newSecret,
+                usefulLevel: this.newUseful,
                 objectId: localStorage.objectId
             }
             console.log(newObj);
@@ -87,6 +93,8 @@ export default {
             this.newDes = "";
             this.newLevel = 1;
             this.newHint = "";
+            this.newUseful = 1;
+            this.newSecret = 1;
             this.getData();
         }
     },

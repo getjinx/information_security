@@ -11,6 +11,7 @@
             <el-table-column prop="dutyMan" label="负责人"></el-table-column>
             <el-table-column prop="depart" label="所属部门"></el-table-column>
             <el-table-column prop="level" label="重要等级"></el-table-column>
+            <el-table-column prop="fragileLevel" label="脆弱等级"></el-table-column>
             <!-- <el-table-column prop="securityLevel" label="安全等级"></el-table-column>
             <el-table-column prop="usabilityLevel" label="有效等级"></el-table-column>
             <el-table-column prop="wholenessLelel" label="完整等级"></el-table-column> -->
@@ -39,6 +40,12 @@
                         </el-option>
                     </el-select>
                 </el-form-item>
+                <el-form-item label="脆弱等级">
+                    <el-select v-model="newFragle" placeholder="请选择等级" class="input">
+                        <el-option v-for="item in 5" :key="item" :label="item" :value="item">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
                 <!-- <el-form-item label="安全等级">
                     <el-select v-model="newSecurityLevel" placeholder="请选择等级" class="input">
                         <el-option v-for="item in 5" :key="item" :label="item" :value="item">
@@ -62,14 +69,14 @@
                 </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
-                <el-button @click="dialogVisible = false;assetId=0;id = 0;newDutyMan='';newDes = '';newName='';newDepart='';newImportantLevel=1;">取 消</el-button>
+                <el-button @click="dialogVisible = false;assetId=0;id = 0;newDutyMan='';newDes = '';newName='';newDepart='';newImportantLevel=1;newFragle=1;">取 消</el-button>
                 <el-button type="primary" @click="add">确 定</el-button>
             </span>
         </el-dialog>
         <el-dialog title="确认删除" :visible.sync="deleteVisiable" width="30%">
             <span>确认删除id为{{id}}的记录?</span>
             <span slot="footer" class="dialog-footer">
-                <el-button @click="deleteVisiable = false;assetId=0;id = 0;newDutyMan='';newDes = '';newName='';newDepart='';newImportantLevel=1;">取 消</el-button>
+                <el-button @click="deleteVisiable = false;assetId=0;id = 0;newDutyMan='';newDes = '';newName='';newDepart='';newImportantLevel=1;newFragle=1;">取 消</el-button>
                 <el-button type="primary" @click="remove">确 定</el-button>
             </span>
         </el-dialog>

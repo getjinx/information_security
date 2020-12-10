@@ -11,7 +11,7 @@
                     <label>部门</label>
                     <el-input class="info-input" readonly v-model="item.apartment"></el-input>
                     <label>等级</label>
-                    <el-input class="info-input" readonly v-model="item.importantLevel"></el-input>
+                    <el-input class="info-input" readonly v-model="item.averageLevel"></el-input>
                 </div>
                 <div class="row" v-for="item in rjzc" :key="item.id">
                     <label>名称</label>
@@ -19,7 +19,7 @@
                     <label>部门</label>
                     <el-input class="info-input" readonly v-model="item.depart"></el-input>
                     <label>等级</label>
-                    <el-input class="info-input" readonly v-model="item.level"></el-input>
+                    <el-input class="info-input" readonly v-model="item.averageLevel"></el-input>
                 </div>
             </el-row>
         </div>
@@ -27,22 +27,22 @@
             <el-row class="proj-info">
                 <span>威胁信息(名称、所属部门、重要等级)</span>
             </el-row>
-            <el-row class="infos" v-for="item in yjzc" :key="item._id">
-                <div class="row" v-for="item in yjzc" :key="item.id">
+            <el-row class="infos">
+                <div class="row" v-for="item in yjThreaten" :key="item.id">
                     <label>名称</label>
                     <el-input class="info-input" readonly v-model="item.assetName"></el-input>
                     <label>部门</label>
                     <el-input class="info-input" readonly v-model="item.depart"></el-input>
                     <label>等级</label>
-                    <el-input class="info-input" readonly v-model="item.level"></el-input>
+                    <el-input class="info-input" readonly v-model="item.averageLevel"></el-input>
                 </div>
-                <div class="row" v-for="item in rjwx" :key="item.id">
+                <div class="row" v-for="item in rjThreaten" :key="item.id">
                     <label>名称</label>
                     <el-input class="info-input" readonly v-model="item.assetName"></el-input>
                     <label>部门</label>
                     <el-input class="info-input" readonly v-model="item.apartment"></el-input>
                     <label>等级</label>
-                    <el-input class="info-input" readonly v-model="item.importanceLevel"></el-input>
+                    <el-input class="info-input" readonly v-model="item.averageLevel"></el-input>
                 </div>
             </el-row>
         </div>
